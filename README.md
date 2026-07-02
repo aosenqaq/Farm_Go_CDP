@@ -4,8 +4,8 @@
 
 ---
 
-感谢人杰大佬开源项目：https://github.com/linguo2625469/qq-farm-cdp-auto
-感谢VMPF提供调试思路：https://github.com/evi0s/WMPFDebugger
+- 感谢人杰大佬开源项目：https://github.com/linguo2625469/qq-farm-cdp-auto
+- 感谢VMPF提供调试思路：https://github.com/evi0s/WMPFDebugger
 
 ---
 ---
