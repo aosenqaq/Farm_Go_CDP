@@ -9,7 +9,7 @@ import {
   RuntimeSettings,
   SaveRuntimeSettings,
   SwitchRuntimeTarget,
-} from '../../wailsjs/go/main/App';
+} from '../../wailsjs/go/desktop/App';
 import { LANAccessSettingsPanel } from '../components/LANAccessSettingsPanel';
 import { SAVE_TOAST_AUTO_DISMISS_MS, SaveSuccessToast } from '../components/SaveSuccessToast';
 import type { RuntimeEventDto } from '../lib/events';

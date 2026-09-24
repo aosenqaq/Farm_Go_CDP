@@ -35,7 +35,7 @@ import {
   StartFarmAutomationScheduler,
   StopFarmAutomationScheduler,
   UpdateCheckPreferences,
-} from '../wailsjs/go/main/App';
+} from '../wailsjs/go/desktop/App';
 import { BrowserOpenURL } from '../wailsjs/runtime/runtime';
 import { AccountIdentityDialog, type RuntimeAccountIdentity } from './components/AccountIdentityDialog';
 import { AppShell, type Tab } from './components/AppShell';

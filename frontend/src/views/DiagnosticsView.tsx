@@ -1,7 +1,7 @@
 import { Play } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
-import { RunDiagnostic, RuntimeLinkStatus } from '../../wailsjs/go/main/App';
+import { RunDiagnostic, RuntimeLinkStatus } from '../../wailsjs/go/desktop/App';
 
 type DiagnosticsViewProps = {
   compact?: boolean;

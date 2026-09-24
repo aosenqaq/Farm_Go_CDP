@@ -1,76 +1,40 @@
 package main
 
 import (
-	"context"
 	"embed"
-	"log/slog"
-	"net/http"
-	"os"
-	"strings"
 
-	"Farm_Go/internal/farm"
-	"github.com/wailsapp/wails/v2"
-	"github.com/wailsapp/wails/v2/pkg/options"
-	"github.com/wailsapp/wails/v2/pkg/options/assetserver"
+	"Farm_Go/desktop"
 )
 
 //go:embed all:frontend/dist
-var assets embed.FS
+var frontendAssets embed.FS
 
 //go:embed build/windows/icon.ico
 var appIcon []byte
 
-func newAssetMiddleware(app *App) func(http.Handler) http.Handler {
-	pollHandler := newRuntimePollHandler(newAppRuntimePollService(app))
-	return func(next http.Handler) http.Handler {
-		return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-			if strings.HasPrefix(r.URL.Path, runtimePollPrefix) {
-				pollHandler.ServeHTTP(w, r)
-				return
-			}
-			if strings.HasPrefix(r.URL.Path, "/farm-assets/") && farm.ServeLocalGameConfigImage(w, r) {
-				return
-			}
-			next.ServeHTTP(w, r)
-		})
-	}
-}
+//go:embed resources/qq/qq-host.js
+var qqHostScript string
+
+//go:embed resources/wmpf/button.js
+var runtimeButtonScript string
+
+//go:embed all:resources/wmpf/frida
+var fridaResources embed.FS
+
+//go:embed resources/frida-python.bundle.zip
+var fridaPythonArchive []byte
+
+//go:embed resources/gameConfig.bundle.zip
+var gameConfigArchive []byte
 
 func main() {
-	// Create an instance of the app structure
-	app := NewApp(assets)
-	for _, cleanupErr := range cleanupLegacyWebviewDataDirs(app.dataDir, os.RemoveAll) {
-		slog.Warn("clean legacy WebView2 data directory", "error", cleanupErr)
-	}
-
-	// Create application with options
-	err := wails.Run(&options.App{
-		Title:     "Farm_Go",
-		Width:     1024,
-		Height:    720,
-		MinWidth:  960,
-		MinHeight: 640,
-		AssetServer: &assetserver.Options{
-			Assets:     assets,
-			Middleware: newAssetMiddleware(app),
-		},
-		BackgroundColour: &options.RGBA{R: 247, G: 246, B: 241, A: 1},
-		Windows:          appWindowsOptions(app.dataDir),
-		OnStartup: func(ctx context.Context) {
-			app.startup(ctx)
-			startTray(appIcon, app.trayCallbacks())
-		},
-		OnBeforeClose: app.beforeClose,
-		OnShutdown: func(ctx context.Context) {
-			stopTray()
-			app.shutdown(ctx)
-		},
-		Bind: []interface{}{
-			app,
-		},
+	desktop.Run(desktop.Resources{
+		Frontend:           frontendAssets,
+		Icon:               appIcon,
+		QQHostScript:       qqHostScript,
+		ButtonScript:       runtimeButtonScript,
+		FridaResources:     fridaResources,
+		FridaPythonArchive: fridaPythonArchive,
+		GameConfigArchive:  gameConfigArchive,
 	})
-
-	if err != nil {
-		println("Error:", err.Error())
-	}
 }

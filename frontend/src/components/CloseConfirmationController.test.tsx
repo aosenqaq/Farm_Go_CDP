@@ -13,12 +13,12 @@ vi.mock('../../wailsjs/runtime/runtime', () => ({
   }),
 }));
 
-vi.mock('../../wailsjs/go/main/App', () => ({
+vi.mock('../../wailsjs/go/desktop/App', () => ({
   ExitApplication: vi.fn().mockResolvedValue(undefined),
   MinimizeToTray: vi.fn().mockResolvedValue(undefined),
 }));
 
-import { ExitApplication, MinimizeToTray } from '../../wailsjs/go/main/App';
+import { ExitApplication, MinimizeToTray } from '../../wailsjs/go/desktop/App';
 import { EventsOn } from '../../wailsjs/runtime/runtime';
 import { CloseConfirmationController } from './CloseConfirmationDialog';
 

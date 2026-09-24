@@ -57,3 +57,11 @@ go test ./...
 cd frontend
 npm test
 ```
+
+## 目录
+
+- `desktop`：桌面程序主体。
+- `internal`：农场逻辑、运行时和本地存储。
+- `frontend`：界面。
+- `resources`：小程序脚本和游戏配置。
+- `scripts`：打包与检查脚本。

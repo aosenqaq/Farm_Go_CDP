@@ -7,7 +7,7 @@ import { FallbackImage } from '../components/FallbackImage';
 import { PollApiError, pollLand } from '../lib/pollApi';
 import { createPollingController } from '../lib/pollingController';
 import type { PollingController } from '../lib/pollingController';
-import { FarmAtlasBuyLockedCrops, FarmAtlasBuyLockedPreview, FarmAtlasPreview, FarmCropAnalytics, FarmFertilizeLand, FarmLandRush, FarmShovelLands, FarmWarehouseRefresh, FarmWarehouseSell, FarmWarehouseSellRecords, RunFarmAutomationTask, SaveWarehouseAutoSellSettings, WarehouseAutoSellSettings as LoadWarehouseAutoSellSettings } from '../../wailsjs/go/main/App';
+import { FarmAtlasBuyLockedCrops, FarmAtlasBuyLockedPreview, FarmAtlasPreview, FarmCropAnalytics, FarmFertilizeLand, FarmLandRush, FarmShovelLands, FarmWarehouseRefresh, FarmWarehouseSell, FarmWarehouseSellRecords, RunFarmAutomationTask, SaveWarehouseAutoSellSettings, WarehouseAutoSellSettings as LoadWarehouseAutoSellSettings } from '../../wailsjs/go/desktop/App';
 import { mergeLandDetailsDelta } from './lib/landDetailsPolling';
 import type { farm, storage } from '../../wailsjs/go/models';
 

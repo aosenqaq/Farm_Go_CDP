@@ -1,7 +1,7 @@
 import { Globe2, Loader2, Save } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
-import { LANAccessSettings, SaveLANAccessSettings } from '../../wailsjs/go/main/App';
+import { LANAccessSettings, SaveLANAccessSettings } from '../../wailsjs/go/desktop/App';
 
 type LANAccessMode = 'lan' | 'tunnel';
 

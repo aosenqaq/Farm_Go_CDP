@@ -1,13 +1,13 @@
 import { Activity, AlertTriangle, Bell, Braces, Clock, Plus, Radio, RefreshCw, RotateCcw, Save, Send, ShieldCheck, Trash2 } from 'lucide-react';
 import { useEffect, useMemo, useState } from 'react';
 
-import * as MessagePushBindings from '../../wailsjs/go/main/App';
+import * as MessagePushBindings from '../../wailsjs/go/desktop/App';
 import {
   MessagePushState,
   SaveMessagePushConfig,
   SendMessagePushDailyTest,
   SendMessagePushTest,
-} from '../../wailsjs/go/main/App';
+} from '../../wailsjs/go/desktop/App';
 import { messagepush } from '../../wailsjs/go/models';
 import { SAVE_TOAST_AUTO_DISMISS_MS, SaveSuccessToast } from '../components/SaveSuccessToast';
 

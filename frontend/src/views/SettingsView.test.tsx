@@ -6,7 +6,7 @@ import { describe, expect, it, vi } from 'vitest';
 
 import { SAVE_TOAST_AUTO_DISMISS_MS, SaveSuccessToast, SettingsView } from './SettingsView';
 
-vi.mock('../../wailsjs/go/main/App', () => ({
+vi.mock('../../wailsjs/go/desktop/App', () => ({
   CleanQQMiniappCache: vi.fn(),
   CleanWeChatCache: vi.fn(),
   CleanYYBMiniappCache: vi.fn(),

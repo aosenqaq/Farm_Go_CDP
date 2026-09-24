@@ -2415,7 +2415,7 @@ export namespace license {
 
 }
 
-export namespace main {
+export namespace desktop {
 	
 	export class GuardianStatusDTO {
 	    enabled: boolean;

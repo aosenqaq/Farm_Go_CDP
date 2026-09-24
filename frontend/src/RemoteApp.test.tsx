@@ -16,13 +16,13 @@ vi.mock('./lib/remoteBridge', () => ({
   syncRemoteSession: vi.fn(),
 }));
 
-vi.mock('../wailsjs/go/main/App', () => ({
+vi.mock('../wailsjs/go/desktop/App', () => ({
   LicenseStatus: vi.fn(),
 }));
 
 import RemoteApp from './RemoteApp';
 import { syncRemoteSession } from './lib/remoteBridge';
-import { LicenseStatus } from '../wailsjs/go/main/App';
+import { LicenseStatus } from '../wailsjs/go/desktop/App';
 
 async function flushEffects() {
   await Promise.resolve();

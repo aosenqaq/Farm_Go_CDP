@@ -16,7 +16,7 @@ const landActions = vi.hoisted(() => ({
   shovel: vi.fn(),
 }));
 
-vi.mock('../../wailsjs/go/main/App', () => ({
+vi.mock('../../wailsjs/go/desktop/App', () => ({
   FarmAtlasBuyLockedPreview: atlasActions.preview,
   FarmAtlasBuyLockedCrops: atlasActions.purchase,
   FarmAtlasPreview: atlasActions.refresh,

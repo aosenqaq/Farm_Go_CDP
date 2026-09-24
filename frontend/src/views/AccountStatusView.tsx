@@ -16,7 +16,7 @@ import {
 } from 'lucide-react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 
-import { FarmAccountStatus, FarmWarehouse } from '../../wailsjs/go/main/App';
+import { FarmAccountStatus, FarmWarehouse } from '../../wailsjs/go/desktop/App';
 import { FallbackImage } from '../components/FallbackImage';
 import type { RuntimeStatusDto } from './OverviewView';
 

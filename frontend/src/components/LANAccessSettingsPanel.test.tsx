@@ -6,7 +6,7 @@ const wails = vi.hoisted(() => ({
   SaveLANAccessSettings: vi.fn(),
 }));
 
-vi.mock('../../wailsjs/go/main/App', () => wails);
+vi.mock('../../wailsjs/go/desktop/App', () => wails);
 
 import { LANAccessSettingsPanel } from './LANAccessSettingsPanel';
 

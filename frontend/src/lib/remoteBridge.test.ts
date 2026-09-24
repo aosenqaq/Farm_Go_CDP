@@ -12,7 +12,7 @@ describe('installRemoteBridge', () => {
     const remoteWindow = { __FARM_GO_REMOTE__: true };
 
     installRemoteBridge({ window: remoteWindow, csrfToken: 'csrf-token', fetchImpl });
-    const result = await remoteWindow.go.main.App.FarmAutomationState('account-1');
+    const result = await remoteWindow.go.desktop.App.FarmAutomationState('account-1');
 
     expect(result).toEqual({ ok: true });
     expect(fetchImpl).toHaveBeenCalledWith('/api/rpc/FarmAutomationState', {
@@ -32,16 +32,16 @@ describe('installRemoteBridge', () => {
 
     installRemoteBridge({ window: remoteWindow, csrfToken: 'csrf-token', fetchImpl });
 
-    await expect(remoteWindow.go.main.App['name with/slash']()).rejects.toThrow('Not Found');
+    await expect(remoteWindow.go.desktop.App['name with/slash']()).rejects.toThrow('Not Found');
     expect(fetchImpl).toHaveBeenCalledWith('/api/rpc/name%20with%2Fslash', expect.objectContaining({ method: 'POST' }));
   });
 
   it('does not replace the desktop Wails bridge when remote mode is disabled', () => {
     const app = { ExistingMethod: vi.fn() };
-    const desktopWindow = { __FARM_GO_REMOTE__: false, go: { main: { App: app } } };
+    const desktopWindow = { __FARM_GO_REMOTE__: false, go: { desktop: { App: app } } };
 
     installRemoteBridge({ window: desktopWindow, fetchImpl: vi.fn() });
 
-    expect(desktopWindow.go.main.App).toBe(app);
+    expect(desktopWindow.go.desktop.App).toBe(app);
   });
 });

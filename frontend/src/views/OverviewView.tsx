@@ -14,7 +14,7 @@ import {
 import { ProgramNoticeDialog, type ProgramNoticeDto } from '../components/ProgramNoticeDialog';
 import { TsdkBlockDialog } from '../components/TsdkBlockDialog';
 import { StatusBadge } from '../components/StatusBadge';
-import { GetProgramNotice } from '../../wailsjs/go/main/App';
+import { GetProgramNotice } from '../../wailsjs/go/desktop/App';
 import { eventTone, formatEventTime, isWorkbenchTaskEvent, targetLabel, tsdkBlockSignal, workbenchTaskName, workbenchTaskResult, type RuntimeEventDto } from '../lib/events';
 import type { GuardStatusDto } from './GuardView';
 

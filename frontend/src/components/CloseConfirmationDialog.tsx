@@ -1,7 +1,7 @@
 import { Minimize2, Power } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
-import { ExitApplication, MinimizeToTray } from '../../wailsjs/go/main/App';
+import { ExitApplication, MinimizeToTray } from '../../wailsjs/go/desktop/App';
 import { EventsOn } from '../../wailsjs/runtime/runtime';
 
 const closeRequestedEvent = 'app:close-requested';

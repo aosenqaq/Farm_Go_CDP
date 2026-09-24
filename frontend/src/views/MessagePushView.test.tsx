@@ -4,7 +4,7 @@ import { describe, expect, it, vi } from 'vitest';
 import { MessagePushView } from './MessagePushView';
 import messagePushViewSource from './MessagePushView.tsx?raw';
 
-vi.mock('../../wailsjs/go/main/App', () => ({
+vi.mock('../../wailsjs/go/desktop/App', () => ({
   MessagePushState: vi.fn(() =>
     Promise.resolve({
       config: {

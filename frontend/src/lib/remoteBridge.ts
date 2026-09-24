@@ -11,7 +11,7 @@ export type RemoteBridgeWindow = {
   __FARM_GO_REMOTE__?: boolean;
   __FARM_GO_TUNNEL__?: boolean;
   go?: {
-    main?: {
+    desktop?: {
       App?: RemoteAppBridge;
     };
   };
@@ -87,6 +87,6 @@ export function installRemoteBridge(options: InstallRemoteBridgeOptions = {}) {
   });
 
   targetWindow.go ||= {};
-  targetWindow.go.main ||= {};
-  targetWindow.go.main.App = app;
+  targetWindow.go.desktop ||= {};
+  targetWindow.go.desktop.App = app;
 }
