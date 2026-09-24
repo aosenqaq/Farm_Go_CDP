@@ -1,0 +1,14 @@
+build/bin
+node_modules
+frontend/dist/*
+!frontend/dist/index.html
+frontend/node_modules
+.superpowers
+.worktrees
+release
+/data/debug-captures/
+/代理版打包配置/HQ Farm/
+*.pid
+=ro&cache=shared
+build_email_doc.ps1
+email_render_page.png

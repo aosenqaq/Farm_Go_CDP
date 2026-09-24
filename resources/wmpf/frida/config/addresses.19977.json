@@ -1,0 +1,23 @@
+{
+    "Version": 19977,
+    "LoadStartHookOffset": "0x25D14B0",
+    "CDPFilterHookOffset": "0x2D765D0",
+    "SceneOffsets": [1480, 1416, 456],
+    "ScenePathOffsets": [64, 8, 16],
+    "SceneWhitelist": [
+        1005,
+        1007,
+        1008,
+        1023,
+        1027,
+        1035,
+        1053,
+        1074,
+        1145,
+        1178,
+        1256,
+        1260,
+        1302,
+        1308
+    ]
+}
